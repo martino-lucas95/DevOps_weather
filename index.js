@@ -60,11 +60,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.get('/weather/:city', async (req, res) => {
   const { city } = req.params;
   const apiKey = process.env.OPENWEATHER_API_KEY;
-
-  if (!apiKey || apiKey === 'SU_API_KEY_AQUI') {
-    return res.status(500).json({ message: 'Error: La API Key de OpenWeatherMap no está configurada en el archivo .env' });
-  }
-
+  
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
   try {

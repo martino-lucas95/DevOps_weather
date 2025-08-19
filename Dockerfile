@@ -1,21 +1,15 @@
-# Use a lightweight official Node.js image as the base
-FROM node:22-alpine AS build
-
-# Set the working directory inside the container
+FROM node:22-alpine AS deps
 WORKDIR /app
-
-# Copy package.json and package-lock.json first to leverage Docker's caching
-# This ensures npm install is only run if dependencies change
 COPY package*.json ./
+RUN npm ci --omit=dev
 
-# Install application dependencies
-RUN npm install
-
-# Copy the rest of the application code
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-# Expose the port your Node.js application listens on
+ENV NODE_ENV=production
+ENV PORT=3000
+RUN chown -R node:node /app
+USER node
 EXPOSE 3000
-
-# Define the command to run your application when the container starts
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]

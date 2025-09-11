@@ -6,8 +6,8 @@ const swaggerOptions = {
     openapi: '3.0.0',
     info: {
       title: 'API de Clima',
-      version: '1.1.0',
-      description: 'API simple para consultar el clima por ciudad o coordenadas.',
+      version: '1.2.0',
+      description: 'API para obtener clima por ciudad, coordenadas y Plus Code (OLC).',
     },
     servers: [
       { url: `http://localhost:${PORT}`, description: 'Local' },

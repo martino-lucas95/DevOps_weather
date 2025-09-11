@@ -77,6 +77,15 @@ docker-compose up --build
   GET http://localhost:3000/api/weather/coords?lat=-34.9011&lon=-56.1645
   ```
 
+- Por [plus code](https://plus.codes/map "Plus code"):   
+  ```
+  # Plus Code largo (no requiere ciudad)
+  GET 'http://localhost:3000/api/weather/pluscode/48Q54R6R+GC'
+
+  # Plus Code corto (requiere ciudad)
+  GET 'http://localhost:3000/api/weather/pluscode/4V3Q+PC?city=Montevideo'
+  ```
+
 - Swagger  
   ```
   http://localhost:3000/api-docs

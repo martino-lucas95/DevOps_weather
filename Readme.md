@@ -107,9 +107,6 @@ curl http://localhost:8080/api/weather/city/Montevideo
 
 # Probar endpoint de coordenadas
 curl "http://localhost:8080/api/weather/coords?lat=-34.9011&lon=-56.1645"
-
-# Ver documentación Swagger
-curl http://localhost:8080/api-docs
 ```
 
 ### Paso 4: Cambiar Versiones
@@ -143,10 +140,15 @@ curl http://localhost:8080/api-docs
 ### Scripts (`scripts/`)
 
 **build.sh:** Construye ambas imágenes Docker
+
 **deploy.sh:** Despliega todos los recursos de Kubernetes
+
 **switch-to-green.sh:** Cambia tráfico a green
+
 **switch-to-blue.sh:** Cambia tráfico a blue
+
 **status.sh:** Muestra estado actual
+
 **cleanup.sh:** Borra todo
 
 ## 🎯 Conceptos claves utilizados
@@ -171,7 +173,7 @@ metadata:
 ```
 
 ### 3. LoadBalancer
-Los servicios usan tipo LoadBalancer para acceso externo (funciona con minikube, kind, etc.)
+Los servicios usan LoadBalancer para acceso externo (funciona con minikube, kind, etc.)
 
 ## 🧪 Testeando el Despliegue
 
@@ -256,8 +258,12 @@ docker images | grep weather-app
 # weather-app:green
 ```
 Evidencias:
+
 ![Screenshot 1](evidencias/1.png)
+
 ![Screenshot 2](evidencias/2.png)
+
+
 ### 3. Despliegue en Kubernetes
 
 ```bash
@@ -274,6 +280,7 @@ Evidencias:
 ### 4. Resolución de Problemas de Imágenes
 
 **Problema encontrado:** `ErrImagePull` - Las imágenes no se podían descargar.
+Evidencia:
 ![Screenshot 5](evidencias/5.png)
 
 **Solución aplicada:**

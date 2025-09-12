@@ -1,6 +1,8 @@
 # 🌦️ Weather API - Despliegue Blue/Green
 
 Despliegue blue/green en Kubernetes.
+Matías Ferreira, Sebastián Forische, Lucas Martino
+DevOps - Universidad Católica del Uruguay
 
 ## 📚 ¿Qué es un Despliegue Blue/Green?
 
